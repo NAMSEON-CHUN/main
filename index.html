@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Market Heat Map</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Global Stock Market Heat Map</h1>
+        <p>Intraday directional view inspired by Finviz-style heat maps.</p>
+      </div>
+      <div class="actions">
+        <label>
+          Refresh (min)
+          <select id="refreshInterval">
+            <option value="0">Off</option>
+            <option value="1">1</option>
+            <option value="5" selected>5</option>
+            <option value="15">15</option>
+          </select>
+        </label>
+        <button id="refreshNow">Refresh now</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="legend">
+        <span class="swatch deep-red"></span><span>&lt; -2%</span>
+        <span class="swatch red"></span><span>-2% to -0.5%</span>
+        <span class="swatch flat"></span><span>-0.5% to 0.5%</span>
+        <span class="swatch green"></span><span>0.5% to 2%</span>
+        <span class="swatch deep-green"></span><span>&gt; 2%</span>
+      </section>
+
+      <section id="status" class="status">Loading...</section>
+      <section id="heatmap" class="heatmap"></section>
+    </main>
+
+    <template id="tileTemplate">
+      <article class="tile">
+        <header>
+          <h2 class="symbol"></h2>
+          <span class="country"></span>
+        </header>
+        <p class="name"></p>
+        <p class="value"></p>
+        <p class="change"></p>
+      </article>
+    </template>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

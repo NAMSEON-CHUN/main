@@ -1,0 +1,142 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --bg: #0f172a;
+  --panel: #111827;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1e293b, var(--bg));
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  padding: 1.5rem;
+  border-bottom: 1px solid #334155;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.topbar p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+label {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+
+button,
+select {
+  background: #1f2937;
+  color: var(--text);
+  border: 1px solid #475569;
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.7rem;
+}
+
+main {
+  padding: 1rem 1.5rem 2rem;
+}
+
+.legend {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #334155;
+}
+
+.deep-red { background: #7f1d1d; }
+.red { background: #dc2626; }
+.flat { background: #475569; }
+.green { background: #16a34a; }
+.deep-green { background: #166534; }
+
+.status {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.heatmap {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.tile {
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  border: 1px solid #334155;
+  min-height: 140px;
+  display: grid;
+  align-content: start;
+  gap: 0.25rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.tile header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.tile h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.country {
+  font-size: 0.75rem;
+  color: #e2e8f0;
+}
+
+.name {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+.value,
+.change {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+@media (max-width: 680px) {
+  .topbar {
+    align-items: start;
+    flex-direction: column;
+  }
+}
